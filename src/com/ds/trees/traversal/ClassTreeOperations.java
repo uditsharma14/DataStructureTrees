@@ -43,6 +43,12 @@ public class ClassTreeOperations{
 		PostOrderTraversal.postOrderTraversalWithRecursion(topNoderoot);
 		System.out.println("");
 		
+		
+		// post oder traversal
+		System.out.println("post order traversal without recursion");
+		PostOrderTraversal.postOrderTraversalWithOutRecursion(topNoderoot);
+		System.out.println("");
+		
 		// level oder traversal
 		System.out.println("level order traversal");
 		LevelOrderTraversal.levelOrderTraversal(topNoderoot);

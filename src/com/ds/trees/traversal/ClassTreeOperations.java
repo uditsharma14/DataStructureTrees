@@ -1,5 +1,7 @@
 package com.ds.trees.traversal;
 
+import com.ds.trees.problems.Miscellaneous;
+
 public class ClassTreeOperations{
 	public static void main(String []args) {
 		Node<Integer> topNoderoot = new Node<Integer>(1);
@@ -53,6 +55,25 @@ public class ClassTreeOperations{
 		System.out.println("level order traversal");
 		LevelOrderTraversal.levelOrderTraversal(topNoderoot);
 		System.out.println("");
+		
+		// level oder traversal in reverse order
+		System.out.println("level order traversal");
+		LevelOrderTraversal.levelOrderTraversalInReverseOrder(topNoderoot);
+	    System.out.println("");
+	    
+	    // deleting the tree
+	   // System.out.println("deleting the tree");
+		//Miscellaneous.deleteTree(topNoderoot);
+	   // System.out.println(topNoderoot);
+	    
+	    
+	    //adding the node
+	    System.out.println("deleting the tree");
+		Miscellaneous.addANode(topNoderoot,new Node<Integer>(30));
+		PreorderTraversal.preOrderTraversalWithRecursion(topNoderoot);
+		System.out.println("");
+		LevelOrderTraversal.levelOrderTraversal(topNoderoot);
+	    //System.out.println(topNoderoot);
 	}
 
 }

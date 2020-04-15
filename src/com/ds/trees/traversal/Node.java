@@ -30,7 +30,7 @@ public class Node<T> {
 	}
 	@Override
 	public String toString() {
-		return "Node [data=" + data + ", left=" + left + ", right=" + right + "]";
+		return "Node [data=" + data + "]";
 	}
 	
 	

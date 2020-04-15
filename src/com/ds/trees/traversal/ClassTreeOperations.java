@@ -73,7 +73,21 @@ public class ClassTreeOperations{
 		PreorderTraversal.preOrderTraversalWithRecursion(topNoderoot);
 		System.out.println("");
 		LevelOrderTraversal.levelOrderTraversal(topNoderoot);
-	    //System.out.println(topNoderoot);
+		System.out.println("");
+	    // height of the binary tree
+		System.out.println("height of binary tree");
+		System.out.println(Miscellaneous.heightOfBinaryTree(topNoderoot));
+		 // height of the binary tree
+		System.out.println("height of binary tree without recursion");
+		System.out.println(Miscellaneous.heightOfBinaryTreeWithoutRecursion(topNoderoot));
+		
+		 // height of the binary tree
+		System.out.println("Deepest Node of Tree");
+		System.out.println(Miscellaneous.findTheDeepestNode(topNoderoot).getData());
+		System.out.println("");
+		
+		topNoderoot = Miscellaneous.deletingTheGivenNode(topNoderoot, 3);
+		System.out.println(topNoderoot);
 	}
 
 }

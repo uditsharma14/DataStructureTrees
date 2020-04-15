@@ -1,6 +1,7 @@
 package com.ds.trees.traversal;
 
-import com.ds.trees.problems.Miscellaneous;
+import com.ds.trees.operations.AddUpdateDeleteOperations;
+import com.ds.trees.operations.Miscellaneous;
 
 public class ClassTreeOperations{
 	public static void main(String []args) {
@@ -63,15 +64,17 @@ public class ClassTreeOperations{
 	    
 	    // deleting the tree
 	   // System.out.println("deleting the tree");
-		//Miscellaneous.deleteTree(topNoderoot);
+	   //Miscellaneous.deleteTree(topNoderoot);
 	   // System.out.println(topNoderoot);
 	    
 	    
 	    //adding the node
-	    System.out.println("deleting the tree");
-		Miscellaneous.addANode(topNoderoot,new Node<Integer>(30));
+	    System.out.println("Adding the Node to the tree");
+	    AddUpdateDeleteOperations.addANode(topNoderoot,new Node<Integer>(30));
+	    System.out.println("Preorder traversal of the tree after adding Node");
 		PreorderTraversal.preOrderTraversalWithRecursion(topNoderoot);
 		System.out.println("");
+		System.out.println("Level Order traversal of the tree after adding Node");
 		LevelOrderTraversal.levelOrderTraversal(topNoderoot);
 		System.out.println("");
 	    // height of the binary tree
@@ -84,10 +87,17 @@ public class ClassTreeOperations{
 		 // height of the binary tree
 		System.out.println("Deepest Node of Tree");
 		System.out.println(Miscellaneous.findTheDeepestNode(topNoderoot).getData());
-		System.out.println("");
 		
-		topNoderoot = Miscellaneous.deletingTheGivenNode(topNoderoot, 3);
-		System.out.println(topNoderoot);
+		
+		//topNoderoot = AddUpdateDeleteOperations.deletingTheGivenNode(topNoderoot, 3);
+		//System.out.println(topNoderoot);
+		 // height of the binary tree
+		System.out.println("Number of Leaf Node of Tree");
+		System.out.println(Miscellaneous.numberOfLeafNodes(topNoderoot));
+		
+		 // height of the binary tree
+		System.out.println("Number of Full Nodes of Tree");
+		System.out.println(Miscellaneous.numberOfFullNodes(topNoderoot));
 	}
 
 }

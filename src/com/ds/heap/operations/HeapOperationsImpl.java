@@ -2,6 +2,11 @@ package com.ds.heap.operations;
 
 import com.ds.heap.Heap;
 
+/**
+ * @author SharmaU1
+ *
+ * @param <T>
+ */
 public class HeapOperationsImpl<T> implements HeapOperations<T> {
 	
 	HeapElementComparator<T> heapElementComparator = new HeapElementComparator<T>();
@@ -13,23 +18,32 @@ public class HeapOperationsImpl<T> implements HeapOperations<T> {
 		return (i - 1) / 2;
 	}
 
-	public int leftChild(Heap<T> heap, int i) {
-		int left = 2 * i + 1;
+	
+	/**
+	 * To get the index of left child of heap element passing the index of that element
+	 */
+	public int leftChild(Heap<T> heap, int index) {
+		int left = 2 * index + 1;
 		if (left >= heap.getCount()) {
 			return -1;
 		}
 		return left;
 	}
 
-	public int rightChild(Heap<T> heap, int i) {
-		int right = 2 * i + 2;
+	/**
+	 * To get the index of right child of heap element passing the index of that element
+	 */
+	public int rightChild(Heap<T> heap, int index) {
+		int right = 2 * index + 2;
 		if (right >= heap.getCount()) {
 			return -1;
 		}
 		return right;
 	}
 
-
+	/**
+	 * To create a heap using capacity and heap type either MIN_HEAP or MAX_HEAP
+	 */
 	public Heap<T> createHeap(int capacity,Heap.HeapType heapType) {
 		Heap<T> heap = new Heap<T>();
 		heap.setHeapType(heapType);
@@ -39,6 +53,7 @@ public class HeapOperationsImpl<T> implements HeapOperations<T> {
 		return heap;
 	}
 
+	
 	public void percolateDown(Heap<T> heap, int i) {
 		int l, r, max;
 		T temp;
@@ -72,6 +87,7 @@ public class HeapOperationsImpl<T> implements HeapOperations<T> {
 		heap.setCount(heap.getCount() - 1);
 		percolateDown(heap, 0);
 		return data;
+		
 	}
 	
 	

@@ -2,9 +2,13 @@ package com.ds.trees.traversal;
 
 import com.ds.trees.operations.AddUpdateDeleteOperations;
 import com.ds.trees.operations.Miscellaneous;
+import com.ds.trees.utils.Counter;
 
 public class ClassTreeOperations{
 	public static void main(String []args) {
+		
+		Counter width = new Counter();
+		width.setValue(0);
 		Node<Integer> topNoderoot = new Node<Integer>(1);
 		Node<Integer> secondNode = new Node<Integer>(2);
 		Node<Integer> thirdNode = new Node<Integer>(3);
@@ -95,9 +99,31 @@ public class ClassTreeOperations{
 		System.out.println("Number of Leaf Node of Tree");
 		System.out.println(Miscellaneous.numberOfLeafNodes(topNoderoot));
 		
-		 // height of the binary tree
+		
 		System.out.println("Number of Full Nodes of Tree");
 		System.out.println(Miscellaneous.numberOfFullNodes(topNoderoot));
+		
+
+		
+		System.out.println("Number of Half Nodes of Tree");
+		System.out.println(Miscellaneous.numberOfHalfNodes(topNoderoot));
+		
+		System.out.println("Width of Tree");
+		Miscellaneous.widthOfTree(topNoderoot,width);
+		System.out.println(width.getValue());
+		
+		System.out.println("Mirror of Tree");
+		Miscellaneous.mirrorBinaryTree(topNoderoot);
+		System.out.println(topNoderoot);
+		
+		String []angrams = {"wee","ewe"};
+		System.out.println(Miscellaneous.groupAnagrams(angrams));
+		
+		
+		int []inOrder = {4,2,5,1,6,3};
+		int []preOrder = {1,2,4,5,3,6};
+		//Node node = Miscellaneous.buildBinaryTree(preOrder, inOrder, 0, inOrder.length);
+		//System.out.println(node);
 	}
 
 }
